@@ -1,0 +1,54 @@
+#previewBox {
+    background:#181818;
+}
+#ContBack, #contbuttons {
+    background:#222;
+}
+#ContBack {border-bottom:1px solid #333}
+button, input {
+    background:#333;
+}
+#loadRecommend {background:#444}
+#loadRecommend:hover {background:#484848}
+button:hover {
+    background:#444;
+}
+* {
+    color:#FFF
+}
+.NSec {
+    border:none;
+}
+.SPanel {
+    background:#222;
+}
+.context {border:1px solid #333;}
+#E2,#E3,#E4 {
+    border-left:#222 1px solid;
+}
+.hideP {
+    background:#181818;
+}
+::-webkit-scrollbar {
+    width:10px;
+    border-left:#2a2a2a 1px solid;
+}
+::-webkit-scrollbar-track {
+    background:#181818;
+}
+::-webkit-scrollbar-thumb {
+    background:#333;
+}
+::-webkit-scrollbar-corner {
+    background:#222;
+}
+body {
+    background:#000;
+}
+.pageseparator {
+    border-bottom:#888 2px dashed;
+}
+.nTitle {border-bottom:#2a2a2a   2px solid;}
+.nSide {border-right:2px #2a2a2a solid;}
+.CSec {border:2px #2a2a2a solid;background:#181818}
+.CSec > div:nth-child(2) {border-left:#2a2a2a 2px solid;}

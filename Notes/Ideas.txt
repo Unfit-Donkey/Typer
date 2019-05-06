@@ -1,0 +1,21 @@
+/*
+
+    Stats to add
+        Minutes Open
+        Date(enter in)
+        Author(enter in)
+    Bugs
+        Scroll bar for document stays there when panel is open
+        Scrollbar for panels doesn't appear
+        Tabcolor change in N panel (the dark mode #FFF color applies to the divs inside the divs and the faded out color doesn't apply)
+        Tags view in N panel stays open
+    General
+        Link from clipboard in + panel
+        Date and author print option
+        Change column maximum for smaller windows
+        Mobile: everything is fine except the topbar    
+    
+
+
+
+*/  
