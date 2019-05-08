@@ -26,145 +26,140 @@
     button:hover {
         background:#ddd;
     }
-#PTitle {
-    font-size:0.5in;
-    display:none;
-    text-align:center;
-}
-.NSec {
-    position:absolute;
-    right:0%;
- }
-#loadRecommend {background:#d8d8d8}
-#loadRecommend:hover {background:#ccc}
-.SecX {position:absolute;}
-.Edit {
-    padding: 0px;
-    margin:0px;     
-    vertical-align: top;
-    white-space:normal;
- }
-#ContBack {
-    transition: width 400ms;
-    background:#FFF;
-    border-right:1px solid #CCC;
-    top:0px;
-    width:100%;
-    position:fixed;
-    font-size:14pt;
-    background: rgba(255,255,255,0.9);
-    box-shadow:0px 4px 10px 2px rgba(0,0,0,0.15);
-}
-#EditCon {
-    font-size:18px; 
-    align-self:center;
-    display: table;
-    width: 100%;
-    table-layout:fixed;
-    padding:0px;
-    padding-top:0px;
-    box-sizing:border-box;
-}
-#PreviewWrapper {
-    width:100vw;
-    transition:width 400ms;
-    overflow-y:scroll;
-    overflow-x:auto;
-    height:100vh;
-    position:absolute;
-    left:0px;
-    top:0px;
-}
-.context {
-    display:none;
-    position:fixed;
-    top:25px;
-    min-width:100px;
-    box-shadow:2px 6px 5px 1px rgba(0,0,0,0.2);
-    border-radius:5px;
-}
-.context > button {
-    width:100%;
-    text-align:left;
-}
-.remove {
-    position: relative;
-    top:100%;
-    right:-100%-20px;
-    background:#888888;
-    border: #464646 2px solid;
-    z-index:0;
-    
- }
-#ContBack > input, #ContBack > button {
-    padding:2px 5px 2px 5px;
-}
-#dPanel {
-    opacity:0.5;
-    background:black;
-    position:fixed;
-    width:0%;
-    height:100%;
-    top:0px;
-    transition:0.5s;
- }
-.SPanel {
-    box-sizing:border-box;
-    background:#FFF;
-    transition:left 400ms, opacity 450ms;
-    top:0px;
-    left:100vw;
-    opacity:0;
-    overflow-y:auto;
-    width:400px;
-    position:fixed;
-    height:100vh;
- }
-.CSec {
-    min-height: 100px;
-    margin-bottom:10px;
-    border:2px #888 solid;
-    background:#FFF
- }
-.nSide {
-    height:100px;
-    width:30px;
-    margin:0px;
-    margin-right:0px;
-    border-right:2px #888 solid;
-    padding:0px;
- }
-.nType {
-    min-height:90px;;
-    padding:5px;
-    margin:0px;
-    font-size:15px;
- }
-.nTitle {
-    border-bottom:#888 2px solid;
-    padding:5px;
-    font-size:20px;
-    min-height:20px;
- }
-.panelBack {
-    width:100%;
-    background:#F8F8F8;
-    transition: background 250ms;
-    font-size:32px;
- }
-.panelBack:hover {
-    background:#EEE;
- }
-#right {
-    height:100%;top:0px;width:100%;left:0px;pointer-events:none;
-}
-#nPanel {
-    padding:0px;
-}
-#nSave {
-    box-sizing:border-box;
-    padding:15px 10px;
-}
+/*Top Bar*/
+    #ContBack {
+        transition: width 400ms;
+        background:#FFF;
+        border-right:1px solid #CCC;
+        top:0px;
+        width:100%;
+        position:fixed;
+        font-size:14pt;
+        background: rgba(255,255,255,0.9);
+        box-shadow:0px 4px 10px 2px rgba(0,0,0,0.15);
+    }
+    .context {
+        display:none;
+        position:fixed;
+        top:25px;
+        min-width:100px;
+        box-shadow:2px 6px 5px 1px rgba(0,0,0,0.2);
+        border-radius:5px;
+    }
+    .context > button {
+        width:100%;
+        text-align:left;
+    }
+    #loadRecommend {background:#d8d8d8}
+    #loadRecommend:hover {background:#ccc}
+    #ContBack > input, #ContBack > button {
+        padding:2px 5px 2px 5px;
+    }
+/*Page Content*/
+    #PTitle {
+        font-size:0.5in;
+        display:none;
+        text-align:center;
+    }
+    /*Old CSS for backwards compatability, do not remove*/
+        .NSec {
+            position:absolute;
+            right:0%;
+        }
+        .SecX {position:absolute;}
+        .Edit {
+            padding: 0px;
+            margin:0px;     
+            vertical-align: top;
+            white-space:normal;
+        }
+        .remove {
+            position: relative;
+            top:100%;
+            right:-100%-20px;
+            background:#888888;
+            border: #464646 2px solid;
+            z-index:0;  
+         }
+    #EditCon {
+        font-size:18px; 
+        align-self:center;
+        display: table;
+        width: 100%;
+        table-layout:fixed;
+        padding:0px;
+        padding-top:0px;
+        box-sizing:border-box;
+    }
+    #PreviewWrapper {
+        width:100vw;
+        transition:width 400ms;
+        overflow-y:scroll;
+        overflow-x:auto;
+        height:100vh;
+        position:absolute;
+        left:0px;
+        top:0px;
+    }
+/*Side Bar*/
+    /*Keep for backwards compatability*/
+        .CSec {
+            min-height: 100px;
+            margin-bottom:10px;
+            border:2px #888 solid;
+            background:#FFF
+        }
+        .nSide {
+            height:100px;
+            width:30px;
+            margin:0px;
+            margin-right:0px;
+            border-right:2px #888 solid;
+            padding:0px;
+        }
+        .nType {
+            min-height:90px;;
+            padding:5px;
+            margin:0px;
+            font-size:15px;
+        }
+        .nTitle {
+            border-bottom:#888 2px solid;
+            padding:5px;
+            font-size:20px;
+            min-height:20px;
+        }
+    .panelBack {
+        width:100%;
+        background:#F8F8F8;
+        transition: background 250ms;
+        font-size:32px;
+    }
+    .panelBack:hover {
+        background:#EEE;
+    }
+    .SPanel {
+        box-sizing:border-box;
+        background:#FFF;
+        transition:left 400ms, opacity 450ms;
+        top:0px;
+        left:100vw;
+        opacity:0;
+        overflow-y:auto;
+        width:400px;
+        position:fixed;
+        height:100vh;
+    }
+    #right {
+        height:100%;top:0px;width:100%;left:0px;pointer-events:none;
+    }
+    #nPanel {
+        padding:0px;
+    }
+    #nSave {
+        box-sizing:border-box;
+        padding:15px 10px;
+    }
 .styleButton {
     width:63px;
     margin:5px;
