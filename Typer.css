@@ -158,6 +158,9 @@
 #right {
     height:100%;top:0px;width:100%;left:0px;pointer-events:none;
 }
+#nPanel {
+    padding:0px;
+}
 .styleButton {
     width:63px;
     margin:5px;
