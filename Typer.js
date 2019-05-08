@@ -231,8 +231,6 @@ var darkMode;
             document.getElementById("ContBack").style.width="100vw";
             document.getElementById("PreviewWrapper").style.width="100vw";
             document.getElementById(what.split("")[0]+"Panel").style.opacity="0";
-            //document.getElementById("dPanel").style.width="0vw";
-            //document.getElementById("dPanel").style.opacity="0";
             document.getElementById("right").style.pointerEvents="none";
          }
         if(what.includes("o")) {
