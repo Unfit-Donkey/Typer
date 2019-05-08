@@ -162,9 +162,7 @@ var darkMode;
             stuffe = stuffe.replace(/<br>/g,"").replace(/&nbsp;/g,"");
             stuffe = replaces(stuffe).replace(/ {1,}/g," ");
             var word = stuffe.split(" ");
-            console.log(stuffe);
             for(var x=0;x<word.length;x++) if(word[x]=="") word.splice(x,1);
-            console.log(word);
             words+=word.length==1&&word[0]==""?0:word.length;     
             chars+=stuffe.replace(/ /g,"").length;
             stuffe = stuffe.replace(/<br>/g,"");
@@ -262,7 +260,6 @@ var darkMode;
      }     
     function FixPaste() {
         for(var g=0;g<3;g++) {
-            console.log("JuICE");
             var dir=document.getElementById("EditCon").firstChild.firstChild.childNodes[g];
             for(var i=0;i<dir.childNodes.length;i++) {
                 dir.childNodes[i].style=false;
