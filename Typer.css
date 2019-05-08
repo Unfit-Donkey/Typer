@@ -161,6 +161,10 @@
 #nPanel {
     padding:0px;
 }
+#nSave {
+    box-sizing:border-box;
+    padding:15px 10px;
+}
 .styleButton {
     width:63px;
     margin:5px;

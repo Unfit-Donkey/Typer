@@ -380,4 +380,5 @@ function Resize() {
     if(panelname!="null") document.getElementById(panelname+"Panel").style.left=document.body.clientWidth-400+"px";
     if(panelname!="null") document.getElementById("ContBack").style.width=document.body.clientWidth-400+"px";
     if(panelname!="null") document.getElementById("PreviewWrapper").style.width=document.body.clientWidth-400+"px";
+    if(panelname!="null") document.getElementById("nSave").style.height=Math.max(window.innerHeight, document.body.clientHeight)-document.getElementById("nPanel").children[0].clientHeight+"px";
 }
