@@ -1,4 +1,4 @@
-/*
+/*Topbar layout
     Name
     Collumns
     View
@@ -18,9 +18,14 @@
  */
 var DarkModeS=false;
 var selection;
+//1 if fullscreen, else is 0
 var pagetype=0;
 var darkMode;
 //Topbar inputs
+    /**
+     * Enables or disables fullscreen
+     * @param into {bool} True if enabling fullscreen
+     */
     function Fullscreen(into) {
         if(into==true) {
             document.getElementById("PrintMenu").style.display="none";
@@ -62,6 +67,10 @@ var darkMode;
         for(var i=1;i<5;i++) document.getElementById("E"+i.toString()).style.borderLeft="none";
         
      }
+    Fullscreen(false);
+    /**
+     * Toggles dark mode
+     */
     function DarkMode() {
         DarkModeS=!DarkModeS;
         if(DarkModeS==true) {
@@ -75,6 +84,9 @@ var darkMode;
             document.getElementById("DMB").title="Dark Mode";
         }
      }
+    /**
+     * Prints document, uses browser's printing GUI
+     */
     function Print() {
         var dark = DarkModeS;
         if(dark==true) DarkMode();
@@ -93,6 +105,9 @@ var darkMode;
         document.getElementById("Pageseparator").style.display="table";
         if(dark==true) DarkMode();
      }
+    /**
+     * Format document before printing
+     */
     function OpenPrint() {
         Context("None");
         document.getElementById("PreviewWrapper").style.position="static";
@@ -107,6 +122,10 @@ var darkMode;
         document.getElementById("ContBack").style.display="none";
         document.getElementById("Pageseparator").style.display="none";
     }
+    /**
+     * Renames Document
+     * @param to {string} name of the document
+     */
     function Rename(to) {
         if(to=="") to="Untitled";
         document.getElementById("Title").innerHTML=to;
@@ -114,6 +133,10 @@ var darkMode;
         if(to!="Untitled") document.getElementById("Name").value=to;
         Title=to;
      }
+    /**
+     * Toggle spell check
+     * @return null
+     */
     function ReverseSC() {
         var Titles = document.getElementsByClassName("title");
         var Text = document.getElementsByClassName("stuff");
@@ -140,10 +163,16 @@ var darkMode;
         Collums = num;
      }
 //Notes
+    /**
+     * (Deprecated) Adds a note
+     */
     function AddComm() {
         var id=Date.now();
         document.getElementById("nSave").innerHTML+="<div class='CSec' id='C"+id+"'><div style='position:absolute;'><button onclick='Remove(this.parentElement.parentElement.id)' style='width:30px;height:30px;' title='Delete Note'><b>X</b></button><br><button onclick='NTags("+id+")' style='width:30px;height:30px;' id='NTB"+id+"' title='Note Tags'><b>T</b></button></div><div><b><div class='nTitle'><div id='nTitle"+id+"' class='nTitleI' contenteditable='true'></div><div class='Ntags'id='NOverTN"+id+"' style='width:100%; height:100%; display:none;'>Tags:&nbsp;&nbsp;<span contenteditable='true' class='nTagsI'></span></div></div></b><div class='nType' contenteditable='true' id='nType"+id+"'></div></div></div>";
-     } 
+     }
+    /**
+     * Runs before opening note panel to get statistics
+     */
     function GetStats() {
         var stuffe = "";
         var chars = 0;
@@ -184,6 +213,9 @@ var darkMode;
         document.getElementById("para").innerHTML = "<b>"+para.toString()+"</b> Paragraph"+(para==1?"":"s");
         document.getElementById("fSize").innerHTML = "<b>"+bytes.toString()+"</b> "+"<span title='"+["Bytes","Kilobyte","Megabyte","Gigabyte","Terabyte","Petabyte","Exabyte","Zetabyte","Yottabyte"][num]+"'>"+["Bytes","KB","MB","GB","TB","PB","EB","ZB","YB"][num]+"</span>";
      }
+    /**
+     * (Deprecated) Note tags
+     */
     function NTags(id) {
         if(document.getElementById('NOverTN'+id.toString()).style.display=='none') {
             document.getElementById('NOverTN'+id.toString()).style.display='block';
@@ -208,6 +240,9 @@ var darkMode;
             document.getElementById("nType"+id.toString()).style.background="";
         }
      }
+    /**
+     * (Deprecated) Note search
+     */
     function nSearch(ths) {
         var ids =[];
         for(var i=0;i<document.getElementsByClassName("nTitleI").length;i++) ids[i]=document.getElementsByClassName("nTitleI")[i].getAttribute("id").replace("nTitle","").toString();
@@ -224,6 +259,10 @@ var darkMode;
         }
      }
     var panelname="null";
+    /**
+     * Opens side panel
+     * @param what {string} Two digit code, first digit is panel ID, second digit is "c" or "o" for close and open
+     */
     function Open(what) {
         if(what.includes("c")) {
             panelname="null";
@@ -249,13 +288,19 @@ var darkMode;
         if(what=="nc") for(var i=0;i<document.getElementById("nSave").children.length;i++) if(document.getElementById("nSave").children[i].children[1].children[0].children[0].children[1].style.display=='block') NTags(document.getElementById("nSave").children[i].id);
      }
 //Text Body
+    /**
+     * Enables tab button functionality
+     */
     function EditConPress(e) {
         if(e.keyCode==9){
             e.preventDefault();
             insertTab();
             getSelection().collapseToEnd();
         }
-     }     
+     }
+    /**
+     * Runs on paste to remove formatting
+     */
     function FixPaste() {
         for(var g=0;g<3;g++) {
             var dir=document.getElementById("EditCon").firstChild.firstChild.childNodes[g];
@@ -266,6 +311,9 @@ var darkMode;
             dir.innerHTML=dir.innerHTML.replace(/<p.*?>/g,"<div>").replace(/<\/p>/g,"</div>").replace(/<span.*?>/g,"").replace(/<\/span>/g,"").replace(/<ul.*?>/g,"").replace(/<ol.*?>/g,"").replace(/<\/ol>/g,"").replace(/<\/ul>/g,"").replace(/<li.*?>/g,"<div>").replace(/<\/li>/g,"</div>").replace(/<label.*?>/g,"").replace(/<\/label>/g,"");
         }
      }
+    /**
+     * Insert tab into document
+     */
     function insertTab() {
         var sel, range;
         /*if (window.getSelection) {
@@ -284,13 +332,15 @@ var Collums = 1;
 var Saved = true;
 var Title = "";
 var SpellCheck = true;
-function clearStyling() {
-    //window.get
-}
 function Remove(ID) {
     var Sec = document.getElementById(ID);
     Sec.parentElement.removeChild(Sec);
  }
+/**
+ * Saves document
+ * @param actual {bool} If true actually saves document, else returns text to save
+ * @return {string} Text of saved document, only returns if actual is true
+ */
 function Save(actual) {
     var a = document.createElement('a');
     if(document.getElementById("ToC")!=null) Remove("ToC");
@@ -307,6 +357,10 @@ function Save(actual) {
      }
     a.click();
  }
+/**
+ * Loads file
+ * @param file {File} File input
+ */
 function Load(file) {
     var reader = new FileReader();
     reader.readAsText(file,"UTF-8");
@@ -327,6 +381,10 @@ function Load(file) {
     }
     
  }
+/**
+ * Opens context menu
+ * @param type {string} Can be "print", "view", or "document"
+ */
 function Context(type) {
     if(type=="None") {
         for(var i=0;i<document.getElementsByClassName("context").length;i++) document.getElementsByClassName("context")[i].style.display="none";
@@ -335,7 +393,9 @@ function Context(type) {
     document.getElementById("context"+type).style.display="block";
     document.getElementById("context"+type).style.left=document.getElementById(type+"Menu").offsetLeft+"px";
  }
-
+/**
+ * Calculates and adds in page separators
+ */
 function previewResize() {
     if(pagetype!=0) {
         document.getElementById("Pageseparator").innerHTML="";
@@ -361,6 +421,10 @@ function previewResize() {
     document.getElementById("Pageseparator").innerHTML="";
     for(var i=0;i<heights.length;i++) document.getElementById("Pageseparator").innerHTML+="<div style='height:"+heights[i]+"px;box-sizing:border-box;width:100%;' class='pageseparator'></div>";
  }
+/**
+ * Cleans text area formatting
+ * @param nore {bool} Whether to clean nSave or main text area, true for nSave
+ */
 function CleanUp(nore) {
     var g=document.getElementsByClassName(nore?"nSave":"Edit");
     for(var i=0;i<g.length;i++) for(var x=0;x<g[i].childNodes.length;x++) {
@@ -371,6 +435,9 @@ function CleanUp(nore) {
         }
     }
  }
+/**
+ * Moves content to account for resize
+ */
 function Resize() {
     if(panelname!="null") document.getElementById(panelname+"Panel").style.left=document.body.clientWidth-400+"px";
     if(panelname!="null") document.getElementById("ContBack").style.width=document.body.clientWidth-400+"px";
